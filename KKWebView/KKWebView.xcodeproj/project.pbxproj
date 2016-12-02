@@ -17,7 +17,7 @@
 		5BB0843F1DF11D3A004ED779 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB0843C1DF11D3A004ED779 /* TestViewController.m */; };
 		5BB084401DF11D3A004ED779 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB0843D1DF11D3A004ED779 /* TestViewController.xib */; };
 		5BB084BF1DF11D4F004ED779 /* ablum in Resources */ = {isa = PBXBuildFile; fileRef = 5BB084BE1DF11D4F004ED779 /* ablum */; };
-		5BB084C31DF11DE8004ED779 /* KKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB084C21DF11DE8004ED779 /* KKWebViewController.m */; };
+		5BB084C91DF14F33004ED779 /* KKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB084C81DF14F33004ED779 /* KKWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,8 @@
 		5BB0843C1DF11D3A004ED779 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		5BB0843D1DF11D3A004ED779 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		5BB084BE1DF11D4F004ED779 /* ablum */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ablum; sourceTree = "<group>"; };
-		5BB084C11DF11DE8004ED779 /* KKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKWebViewController.h; sourceTree = "<group>"; };
-		5BB084C21DF11DE8004ED779 /* KKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKWebViewController.m; sourceTree = "<group>"; };
+		5BB084C71DF14F33004ED779 /* KKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKWebViewController.h; sourceTree = "<group>"; };
+		5BB084C81DF14F33004ED779 /* KKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 		5BB084131DF11BD0004ED779 = {
 			isa = PBXGroup;
 			children = (
-				5BB084C01DF11DE8004ED779 /* Classes */,
+				5BB084C61DF14F33004ED779 /* Classes */,
 				5BB084411DF11D43004ED779 /* Resource */,
 				5BB084381DF11D3A004ED779 /* Src */,
 				5BB0841E1DF11BD0004ED779 /* KKWebView */,
@@ -117,13 +117,14 @@
 			path = KKWebView/Resource;
 			sourceTree = "<group>";
 		};
-		5BB084C01DF11DE8004ED779 /* Classes */ = {
+		5BB084C61DF14F33004ED779 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5BB084C11DF11DE8004ED779 /* KKWebViewController.h */,
-				5BB084C21DF11DE8004ED779 /* KKWebViewController.m */,
+				5BB084C71DF14F33004ED779 /* KKWebViewController.h */,
+				5BB084C81DF14F33004ED779 /* KKWebViewController.m */,
 			);
-			path = Classes;
+			name = Classes;
+			path = ../Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +205,7 @@
 				5BB084211DF11BD0004ED779 /* main.m in Sources */,
 				5BB0843E1DF11D3A004ED779 /* KKFileManager.m in Sources */,
 				5BB0843F1DF11D3A004ED779 /* TestViewController.m in Sources */,
-				5BB084C31DF11DE8004ED779 /* KKWebViewController.m in Sources */,
+				5BB084C91DF14F33004ED779 /* KKWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +362,7 @@
 				5BB084351DF11BD0004ED779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
