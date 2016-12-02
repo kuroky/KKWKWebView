@@ -1,0 +1,31 @@
+{
+  "groups":[
+	{
+		"keys":"bottom1,bottom2,bg,bike,qiu,cloud,feichuan,bike2,pic_two,circle,mask,shenzi,yingzi,chibang,bg33,bg44,bg5",
+		"name":"m50"
+	}],
+	"resources": [
+      {"name":"bottom1","type":"image","url":"m50/img/bottom1.png"},
+        {"name":"bottom2","type":"image","url":"m50/img/bottom2.png"},
+       {"name":"bg","type":"image","url":"m50/img/bg2.jpg"},
+        {"name":"bike","type":"image","url":"m50/img/bike.png"},
+        {"name":"qiu","type":"image","url":"m50/img/qiu.png"},
+        {"name":"cloud","type":"image","url":"m50/img/cloud.png"},
+        {"name":"feichuan","type":"image","url":"m50/img/feichuan.png"},
+        {"name":"bike2","type":"image","url":"m50/img/bikeplus.png"},
+        {"name":"pic_two","type":"image","url":"m50/img/pic2-5.png"},
+        {"name":"circle","type":"image","url":"m50/img/circle.png"},
+        {"name":"bg33","type":"image","url":"m50/img/bg33.png"},
+        {"name":"bg44","type":"image","url":"m50/img/bg44.png"},
+        {"name":"bg5","type":"image","url":"m50/img/bg5.png"},
+
+
+        {"name":"mask","type":"image","url":"m50/img/mask2.png"},
+        {"name":"shenzi","type":"image","url":"m50/img/shenzi.png"},
+        {"name":"yingzi","type":"image","url":"m50/img/yingzi.png"},
+        {"name":"chibang","type":"image","url":"m50/img/chibang.png"}
+
+
+
+    ]
+}

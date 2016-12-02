@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	    <meta content="telephone=no, address=no" name="format-detection">
+	    <meta name="renderer" content="webkit">
+	    <meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	    <meta name="full-screen" content="true"/>
+	    <meta name="screen-orientation" content="portrait"/>
+	    <meta name="x5-fullscreen" content="true"/>
+	    <meta name="360-fullscreen" content="true"/>
+	    <link rel="stylesheet" href="css/weui.css">
+	    <link rel="stylesheet" href="css/editor.css">
+	    <link rel="stylesheet" href="css/text_animate.css">
+	    <script type="text/javascript">
+	    	var card_hash = "94024130";
+	    	var token = "26264537-e1c75845df98c08a31c5f9c00e05eb00";
+	    	var isShowPrinttp = "0";	
+	    	var android_mymusic = "";
+	    	var sys_type = "other";
+	        var init_music_type = "sys";
+	        var androidOldShow = "true";
+	        var is_wx = "";
+	    </script>
+        <script src="js/zepto.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		    var touchStartMusic = function(){
+		        music_check_timeout = undefined;
+		        function check_Music(){
+		            // 阻塞执行 500 ms 执行一次
+		            if(musicView != undefined && musicView.audioPlayer != undefined && musicView.audioPlayer.inited == true){
+		                if(music_check_timeout != undefined){
+		                    clearTimeout(music_check_timeout);
+		                }
+		                musicView.audioPlayer.isPlay = false;
+		                musicView.audioPlayer._play();
+		            }else{
+		                music_check_timeout = setTimeout(check_Music, 500);
+		            }
+		        }
+		        check_Music();
+		        document.removeEventListener('touchstart',touchStartMusic);
+		    }
+		    document.addEventListener('touchstart',touchStartMusic);
+		</script>
+		<script>
+		    function addEgret(){
+		        var height = window.innerHeight;
+		        var weight = window.innerWidth;
+		        var per = height/weight;
+		        var t ="";
+		        if(per <=4/3){
+		            t="showAll";
+		        }else {
+		            t="noBorder";
+		        }
+		        setCookie("scaleMode",t);
+		    }
+		    addEgret();
+		    //写cookies 
+		    function setCookie(name,value) 
+		    { 
+		        var Days = 30; 
+		        var exp = new Date(); 
+		        exp.setTime(exp.getTime() + Days*24*60*60*1000); 
+		        document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString(); 
+		    } 
+		    //读取cookies 
+		    function getCookie(name) 
+		    { 
+		        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+		        if(arr=document.cookie.match(reg))
+		            return unescape(arr[2]); 
+		        else 
+		            return null; 
+		    } 
+		    //删除cookies 
+		    function delCookie(name) 
+		    { 
+		        var exp = new Date(); 
+		        exp.setTime(exp.getTime() - 1); 
+		        var cval=getCookie(name); 
+		        if(cval!=null) 
+		            document.cookie= name + "="+cval+";expires="+exp.toGMTString(); 
+		    } 
+		</script>
+		<!-- 2.5 -->
+		<div style="margin: auto;width: 100%;height: 100%;" class="egret-player" id="egret-player"
+		     data-entry-class="Main"
+		     data-orientation="auto"
+		     data-scale-mode ="showAll"
+		     data-resolution-mode="retina"
+		     data-frame-rate="60"
+		     data-content-width="640"
+		     data-content-height="1008"
+		     data-show-paint-rect="false"
+		     data-multi-fingered="2"
+		     data-show-fps="false" data-show-log="false"
+		     data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
+		    <div class='lyricBar' >
+		        <ul></ul>
+		    </div>
+		    <div id='TextView'></div>
+		    <input type="hidden" value="" id="per"/>
+		</div>
+		<div class="musicWrap">
+		    <a id="AudioBtn" href="javascript:;"></a>
+		</div>
+		<style>
+			.loadingWrap{width:100%;height:100%;position:fixed;top:0;background:url("Public/Image/base/moli/bg.jpg");background-size:100% 100%;background-repeat:no-repeat;z-index:2}
+			.loadingFont{background:url("Public/Image/base/moli/font.png");background-size:100% 100%;background-repeat:no-repeat;position:absolute;bottom:5%;left:50%;width:130px;height:60px;margin-left:-65px}
+			.loadingNum{width:100px;height:30px;position:absolute;bottom:30%;left:50%;font:18px 微软雅黑;text-align:center;margin-left:-50px;color:white}
+			.loading{position:absolute;left:50%;top:50%;background:url("Public/Image/base/moli/logo1.png");background-size:100% 100%;width:130px;height:130px;border-radius:100%;margin-top:-60%;margin-left:-65px}
+			.waiquan{position:absolute;left:50%;top:50%;margin:-288px 0 0 -124px;width:185px;height:185px;border-radius:100%;margin-top:-80%;margin-left:-92px}
+			.xunzhuan{width:135px;height:135px;position:absolute;border-radius:100%;top:50%;left:50%;opacity:.7;box-shadow:rgba(255,255,255,0.6) -10px -15px 13px -13px;-webkit-animation:rotate 2s infinite linear;margin-top:-60.7%;margin-left:-68px}
+			.loaderConten{position:absolute;width:135px;height:135px;top:30%;left:50%;margin-left:-75px;margin-top:-75px}@-webkit-keyframes rotate{0%{-webkit-transform:rotateZ(0deg)}100%{-webkit-transform:rotateZ(360deg)}}
+		</style>
+		<div class="loadingWrap">
+			<div class="loaderConten">
+			    <div class="loading"></div>
+			    <div class="xunzhuan"></div>
+			    <div class="waiquan">
+			      <img src="Public/Image/base/moli/waiquan.png" width="100%">
+			    </div>
+			</div>
+			<div class="loadingNum">
+			    <p id='loadingText'>加载中</p>
+			    <p id='loadingPro'>0%</p>
+			</div>
+			<div class="loadingFont"></div>
+		</div>
+		<div id="MusicView">
+		    <ul class="sys">
+			    <div class="music-sub-view sys">
+		            <div class="sys-music">
+		                <div id='MusicList' class='all'>
+		                    <li class='happy'>
+	                            <div id="MusicItem60" class="musicItem">
+	                                <div class="musicItemTitle"></div>
+	                                <div class="musicItemAfter">
+	                                    <div id="musicStatus" class="musicStatus" data-info="music/ml_152.mp3" data-lyric='Public/lyric/music_152.lrc?v=1606231814'></div>
+	                                    <span>歌词</span>                                    
+	                                    <div class="clrBox"></div>
+	                                </div>
+	                                <div class="clrBox"></div>
+	                            </div>
+		                    </li>                
+		                </div>
+		            </div>
+		        </div>
+		    </ul>
+		</div>
+		<script src="js/common.js"></script>
+		<script src="js/music.js"></script>
+		<script src="js/text_config.js"></script>
+		<script>
+		    var mvCfg = {
+		        cid : 94024130,
+		        pics : ['uploadImg/1.jpg','uploadImg/2.jpg','uploadImg/3.jpg','uploadImg/4.jpg','uploadImg/5.jpg'],
+		    	music : parseInt(60),
+		    	default_music:parseInt(60),
+		    	musictype:"sys",
+		    	tp : 20,
+		    	title : "",
+		        lyric : parseInt(1),
+		    	cover : parseInt(0),
+		    	coverTip : parseInt(0),
+		    	picsRotate: [0,0,0,0,],
+		    	texts :[],
+		    };
+		    var canEdit = false;
+		    // 文本转义
+		    (function(){
+		        for(var i=0,len=mvCfg.texts.length;i<len;++i) {
+		            mvCfg.texts[i] = decodeEscapeHtml(mvCfg.texts[i]);
+		        }
+		    })();
+		    function initFunc(){
+		        lyricPlayer.init();
+		        showTip();
+		    }
+		
+		    function showTip(){}
+			
+	        // pc 端音乐按钮和二维码的自动对齐.
+	        function adjustQRPos() {
+	            var canvasElem = $('.egret-player canvas');
+	            var width = parseInt(canvasElem.css('width')) / 2;
+	            var textView = $('#TextView');
+	            textView.css('width',canvasElem.css('width'));
+	            textView.css('left',canvasElem.css('left'));
+	            var lyricItem = $('.lyricBar');
+	            lyricItem.css('width',canvasElem.css('width'));
+	            lyricItem.css('left',canvasElem.css('left'));
+	            $('.musicWrap').css('margin-right',(-width + 10) +'px');
+	        }
+		</script>
+		<script src="js/play.js"></script>
+	    <script egret="lib" src="js/egret_002.js"></script>
+	    <script egret="lib" src="js/egret.js"></script>
+	    <script egret="lib" src="js/game.js"></script>
+	    <script egret="lib" src="js/game_002.js"></script>
+	    <script egret="lib" src="js/tween.js"></script>
+	    <script egret="lib" src="js/res.js"></script>
+	    <script egret="lib" src="js/particle.js"></script>
+	    <script src="@MAIN_JS@"></script>
+	    <script> 
+	    //@MAIN_JS@
+	    	function setPics(mArr){
+	    		mvCfg.pics = mArr;
+	    	}
+	    	function setStart(){
+	    		egret.runEgret();
+	    		$(function(){
+		            $('.musicWrap').css('right','50%');
+		            adjustQRPos();
+		            $(window).resize(function() {
+		                adjustQRPos();
+		            });
+		        });
+	    	}
+	    	function setMusic(mMusic,lyric){
+	    		var musicStatus = document.getElementById('musicStatus');
+		    	musicStatus.dataset.info = mMusic;
+		    	musicStatus.dataset.lyric = lyric;
+	    	}
+	    	window.onload = function(even){
+	    		try{
+					window.location="mystyle://onLoadCompelte";
+	    			window.huuhooActivityLocal.onLoadCompelte();
+				}catch(e){};
+	    	}
+	    </script>
+		
+	</body>
+</html>
