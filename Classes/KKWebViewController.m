@@ -7,6 +7,7 @@
 //
 
 #import "KKWebViewController.h"
+#import <Masonry.h>
 
 @interface KKWebViewController () <WKUIDelegate, WKNavigationDelegate>
 
@@ -130,54 +131,20 @@
 - (void)addContentView {
     [self.view addSubview:self.wkwebView];
     [self.view addSubview:self.progressView];
-    NSDictionary *views = NSDictionaryOfVariableBindings(_wkwebView);
-    NSString *hvfl = @"H:|-0-[_wkwebView]-0-|";
-    NSArray *hcs = [NSLayoutConstraint constraintsWithVisualFormat:hvfl
-                                                           options:kNilOptions
-                                                           metrics:nil
-                                                             views:views];
-    [self.view addConstraints:hcs];
-    
-    NSString *vfl1 = @"V:|-0-[_wkwebView]-0-|";
-    NSArray *vfl2 = [NSLayoutConstraint constraintsWithVisualFormat:vfl1
-                                                            options:kNilOptions
-                                                            metrics:nil
-                                                              views:views];
-    [self.view addConstraints:vfl2];
-    self.wkwebView.hidden = YES;
-    
-    
-    NSDictionary *viewsa = NSDictionaryOfVariableBindings(_progressView);
-    NSString *hvfla = @"H:|-0-[_progressView]-0-|";
-    NSArray *hcsa = [NSLayoutConstraint constraintsWithVisualFormat:hvfla
-                                                           options:kNilOptions
-                                                           metrics:nil
-                                                             views:viewsa];
-    [self.view addConstraints:hcsa];
-    
-    NSString *vfl1a = @"V:|-0-[_progressView(2)]|";
-    NSArray *vfl2a = [NSLayoutConstraint constraintsWithVisualFormat:vfl1a
-                                                            options:kNilOptions
-                                                            metrics:nil
-                                                              views:viewsa];
-    [self.view addConstraints:vfl2a];
-    /*
     [self.wkwebView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
         make.bottom.equalTo(self.view.mas_bottom);
         make.right.equalTo(self.view.mas_right);
         make.top.equalTo(self.view.mas_top);
     }];
-     */
     
-    /*
     [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
         make.top.equalTo(self.view.mas_top);
         make.height.equalTo(@(2));
     }];
-    */
+    
     [self.navigationItem setLeftBarButtonItems:@[self.backBarItem]];
 }
 

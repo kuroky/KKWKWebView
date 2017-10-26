@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CD056842AB642B112CFDB6F /* libPods-KKWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2020C7C8D207FA2CE4A966 /* libPods-KKWebView.a */; };
 		5BB084211DF11BD0004ED779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB084201DF11BD0004ED779 /* main.m */; };
 		5BB084241DF11BD0004ED779 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB084231DF11BD0004ED779 /* AppDelegate.m */; };
 		5BB084271DF11BD0004ED779 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB084261DF11BD0004ED779 /* ViewController.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E2020C7C8D207FA2CE4A966 /* libPods-KKWebView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKWebView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB0841C1DF11BD0004ED779 /* KKWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB084201DF11BD0004ED779 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5BB084221DF11BD0004ED779 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +41,8 @@
 		5BB084BE1DF11D4F004ED779 /* ablum */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ablum; sourceTree = "<group>"; };
 		5BB084C71DF14F33004ED779 /* KKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKWebViewController.h; sourceTree = "<group>"; };
 		5BB084C81DF14F33004ED779 /* KKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKWebViewController.m; sourceTree = "<group>"; };
+		B1C0ACF19E72283745FE32C2 /* Pods-KKWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKWebView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKWebView/Pods-KKWebView.debug.xcconfig"; sourceTree = "<group>"; };
+		F87DA03F7509316B4AE60799 /* Pods-KKWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKWebView.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKWebView/Pods-KKWebView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CD056842AB642B112CFDB6F /* libPods-KKWebView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,8 @@
 				5BB084381DF11D3A004ED779 /* Src */,
 				5BB0841E1DF11BD0004ED779 /* KKWebView */,
 				5BB0841D1DF11BD0004ED779 /* Products */,
+				D92C1D2A6E8FC4DE86D4E1B9 /* Pods */,
+				846316C85D188B160090ABF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +134,23 @@
 			path = ../Classes;
 			sourceTree = "<group>";
 		};
+		846316C85D188B160090ABF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E2020C7C8D207FA2CE4A966 /* libPods-KKWebView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D92C1D2A6E8FC4DE86D4E1B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1C0ACF19E72283745FE32C2 /* Pods-KKWebView.debug.xcconfig */,
+				F87DA03F7509316B4AE60799 /* Pods-KKWebView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BB084331DF11BD0004ED779 /* Build configuration list for PBXNativeTarget "KKWebView" */;
 			buildPhases = (
+				6EB8F044EE0C21ACF6AE233C /* [CP] Check Pods Manifest.lock */,
 				5BB084181DF11BD0004ED779 /* Sources */,
 				5BB084191DF11BD0004ED779 /* Frameworks */,
 				5BB0841A1DF11BD0004ED779 /* Resources */,
+				BB99932FCF3ADF7B555A3273 /* [CP] Embed Pods Frameworks */,
+				84B8847535E9B54D1291D73A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,7 +180,7 @@
 		5BB084141DF11BD0004ED779 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = kuroky;
 				TargetAttributes = {
 					5BB0841B1DF11BD0004ED779 = {
@@ -194,6 +221,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6EB8F044EE0C21ACF6AE233C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKWebView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84B8847535E9B54D1291D73A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KKWebView/Pods-KKWebView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB99932FCF3ADF7B555A3273 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KKWebView/Pods-KKWebView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BB084181DF11BD0004ED779 /* Sources */ = {
@@ -240,7 +318,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -248,7 +328,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -287,7 +372,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -295,7 +382,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -321,6 +413,7 @@
 		};
 		5BB084341DF11BD0004ED779 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1C0ACF19E72283745FE32C2 /* Pods-KKWebView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KKWebView/Info.plist;
@@ -333,6 +426,7 @@
 		};
 		5BB084351DF11BD0004ED779 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F87DA03F7509316B4AE60799 /* Pods-KKWebView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KKWebView/Info.plist;
